@@ -1,0 +1,212 @@
+<div><h4>Edit Agent</h4></div>
+          
+    <div class="container">
+          <form >
+            <div class="row">
+              <div class="col-12" id="errorDiv">
+                <h4 class="text-danger mb-4" id="errorMessage"></h4>
+              </div>
+              <!--Left Col-->
+              <div class=" col-md-6">
+                <div class="form-row">
+                  <label class="col-3">ID/Code</label>
+                  <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="model.code"   name="code"/>
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Name</label>
+                  <div class="col">
+                    <input type="text" [(ngModel)]="model.name"  class="form-control" name="name" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Markup Plan</label>
+                  <div class="col">
+                    <select id="markupPlanId"  [(ngModel)]="model.markupPlanId" name="markupPlanId"  class="form-control">
+                      <option value=""></option>
+                      <option *ngFor="let plan of markupPlans" value="{{plan.id}}">{{plan.markupPlanName}}</option>
+                    </select>
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Email</label>
+                  <div class="col">
+                    <input type="email"  [(ngModel)]="model.email" class="form-control" name="email" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Mobile</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.mobile" class="form-control" name="mobile" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Phone</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.phone" class="form-control" name="phone" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Login Url</label>
+                  <div class="col">
+                    <input class="form-control"  [(ngModel)]="model.loginUrl" name="loginUrl">
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">city</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.city" class="form-control" name="city" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">State</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.state" class="form-control" name="state" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Country</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.country" class="form-control" name="country" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Zip/Postal Code</label>
+                  <div class="col">
+                    <input type="text" [(ngModel)]="model.zip" class="form-control" name="zip" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Logo</label>
+                  <div class="col">
+                    <input type="file" id="logo" [(ngModel)]="model.logo" class="form-control" name="logo" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Contact Person</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.contactPerson" class="form-control" name="contactPerson" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Referred By</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.referredBy" class="form-control" name="referredBy" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">Balance</label>
+                  <div class="col">
+                    <input type="number" [(ngModel)]="model.balance" class="form-control" name="balance" />
+                  </div>
+                </div>
+    
+                <hr />
+                <div class="form-row">
+                  <label class="col-3">SMTP Server</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.smtpServer" class="form-control" name="smtpServer" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">SMTP Port</label>
+                  <div class="col">
+                    <input type="number"  [(ngModel)]="model.smtpPort" class="form-control" name="smtpPort" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">SMTP Username</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.smtpUsername" class="form-control" name="smtpUsername" />
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <label class="col-3">SMTP Password</label>
+                  <div class="col">
+                    <input type="text"  [(ngModel)]="model.smtpPassword" class="form-control" name="smtpPassword" />
+                  </div>
+                </div>
+    
+              </div>
+    
+              <!--Right Col-->
+              <div class="col-md-6">
+    
+                <div class="form-row">
+                  <div class="col-12">
+                    <label style="text:bold;">Agent Type:</label>
+                  </div>
+    
+                  <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="agentType" id="inlineRadio1" [(ngModel)]="model.agentType"  value="B2B">
+                        <label class="form-check-label">B2B</label>
+                        </div>
+                        
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="agentType" id="inlineRadio2" [(ngModel)]="model.agentType" value="B2C">
+                        <label class="form-check-label">B2C</label>
+                        </div>
+                  </div>
+                </div>
+    
+                <div class="form-row">
+                  <div class="col-12">
+                    <label>Status:</label>
+                  </div>
+    
+                  <div class="col ">
+                    
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="status" id="inlineRadio1" [(ngModel)]="model.status" value="1">
+                          <label class="form-check-label">New</label>
+                          </div>
+                          
+                          <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="status" id="inlineRadio2" [(ngModel)]="model.status"  value="2">
+                          <label class="form-check-label">Active</label>
+                          </div>
+                          
+                          <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="status" id="inlineRadio3" [(ngModel)]="model.status"  value="3">
+                          <label class="form-check-label">Inactive</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="status" id="inlineRadio4" [(ngModel)]="model.status"  value="4">
+                              <label class="form-check-label">Blocked</label>
+                          </div>
+                
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="hidden"  [(ngModel)]="model.id" class="form-control" name="id">
+                <button type="submit" (click)="edit()"  class="btn btn-success" >Update</button>
+                <button type="reset" (click)="reset()" class="btn btn-danger">Reset</button>
+              </div>
+            </div>
+          </form>
+        </div>
+     
+    
